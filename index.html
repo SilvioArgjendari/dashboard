@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page">
+
+    <!-- ===== Header: Clock & Greeting ===== -->
+    <header class="header">
+      <div class="clock" id="clock">00:00</div>
+      <div class="date" id="date"></div>
+      <div class="greeting">
+        <span id="greeting-word"></span>,&nbsp;<span id="greeting-name"></span>
+      </div>
+    </header>
+
+    <!-- ===== Main: Widgets ===== -->
+    <main class="widgets">
+
+      <!-- Weather -->
+      <section class="widget">
+        <h2 class="widget-title">Weather</h2>
+        <div class="widget-body" id="weather-content"></div>
+      </section>
+
+      <!-- To-Do List -->
+      <section class="widget">
+        <h2 class="widget-title">To-Do</h2>
+        <div class="widget-body">
+          <ul class="item-list" id="todo-list"></ul>
+          <form class="add-form" id="todo-form">
+            <input type="text" class="text-input" id="todo-input" placeholder="Add a task..." autocomplete="off">
+            <button type="submit" class="icon-btn" title="Add task">+</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Bookmarks -->
+      <section class="widget">
+        <h2 class="widget-title">Bookmarks</h2>
+        <div class="widget-body">
+          <ul class="item-list" id="bookmarks-list"></ul>
+          <form class="add-form" id="bookmarks-form">
+            <input type="text"  class="text-input" id="bookmark-name" placeholder="Name" autocomplete="off">
+            <input type="text"  class="text-input" id="bookmark-url"  placeholder="https://..." autocomplete="off">
+            <button type="submit" class="icon-btn" title="Add bookmark">+</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== Footer: Daily Quote ===== -->
+    <footer class="footer">
+      <blockquote class="quote-block">
+        <p class="quote-text" id="quote-text"></p>
+        <cite class="quote-author" id="quote-author"></cite>
+      </blockquote>
+    </footer>
+
+  </div>
+
+  <!--
+    Scripts are loaded in dependency order.
+    storage.js must come first because all other files use it.
+    app.js comes last because it calls init functions defined in the other files.
+  -->
+  <script src="js/storage.js"></script>
+  <script src="js/quote.js"></script>
+  <script src="js/todo.js"></script>
+  <script src="js/bookmarks.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
