@@ -55,7 +55,7 @@ function renderTodos() {
         class="todo-check"
         data-id="${todo.id}"
         ${todo.completed ? 'checked' : ''}
-        aria-label="Mark task complete"
+        aria-label="${todo.completed ? 'Mark task incomplete' : 'Mark task complete'}"
       >
       <span class="todo-text ${todo.completed ? 'done' : ''}">${escapeHtml(todo.text)}</span>
       <button class="delete-btn" data-id="${todo.id}" title="Delete task">&times;</button>
